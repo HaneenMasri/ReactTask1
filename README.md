@@ -1,16 +1,49 @@
-# React + Vite
+# My Blog App (React Project)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
+This is a simple blog application built with **React**.  
+The app displays multiple blogs with a title, description, and an image.  
+Images are loaded randomly each time the page refreshes using **Picsum.photos**.
 
-Currently, two official plugins are available:
+## Features
+- Display multiple blog cards.
+- Each card has a title, description, and a random image.
+- Built using React Components, Pages, and Layout for better structure.
+- Props are used to pass data from parent to child components.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Project Structure
+my-blog-app/
+├─ public/
+├─ src/
+│ ├─ components/
+│ │ ├─ BlogCard.jsx
+│ │ ├─ Header.jsx
+│ │ └─ Footer.jsx
+│ ├─ pages/
+│ │ └─ Home.jsx
+│ ├─ layout/
+│ │ └─ Layout.jsx
+│ ├─ App.jsx
+│ └─ index.js
+└─ package.json
 
-## React Compiler
+## Installation
+1. Clone the repository:
+```bash
+git clone https://github.com/HaneenMasri/ReactTask1.git
+Navigate to the project folder:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+cd ReactTask1
+Install dependencies:
 
-## Expanding the ESLint configuration
+npm install
+Run the project:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+npm start
+The app will run at http://localhost:5173 (or the port shown in your terminal).
+
+Usage
+The Home page displays a list of blog cards.
+
+Each card shows a title, description, and a randomly loaded image from Picsum.photos.

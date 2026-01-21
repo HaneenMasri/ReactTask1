@@ -1,6 +1,7 @@
 import styles from "./BlogCard.module.css";
 
-function BlogCard({ title, description, image }) {
+function BlogCard({ title, description, image }) //props from home 
+ {
   return (
     <div className={styles.blogItem}>
       <div
