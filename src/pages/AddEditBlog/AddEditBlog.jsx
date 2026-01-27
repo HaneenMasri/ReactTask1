@@ -20,11 +20,10 @@ function AddEditBlog() {
   const blog = loaderData?.blog || null;//إذا البيانات موجودة (يعني تعديل)
 
   useEffect(() => {
-    dispatch(startLoading()); // شغل السبينر الكبير (Redux)
-    
+    dispatch(startLoading()); 
     const timer = setTimeout(() => {
-      dispatch(stopLoading()); // أوقف السبينر
-      setReady(true); // اسمح بعرض الصفحة
+      dispatch(stopLoading()); 
+      setReady(true);
     }, 2000);
 
     return () => clearTimeout(timer);
