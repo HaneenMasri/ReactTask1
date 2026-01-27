@@ -5,7 +5,6 @@ import Header from "../../components/Layout/Header";
 import Footer from "../../components/Layout/Footer";
 import styles from "./Layout.module.css";
 import Loader from "../../components/Layout/Loader";
-
 function Layout() {
   const location = useLocation();
   const { t } = useTranslation();

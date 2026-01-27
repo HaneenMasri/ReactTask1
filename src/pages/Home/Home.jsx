@@ -7,20 +7,20 @@ import BlogCard from "../../components/Home/BlogCard";
 import Pagination from "../../components/Home/Pagination";
 
 function Home() {
+  // جلب البيانات القادمة من الـ Loader
   const { blogs, pagination } = useLoaderData();
   const dispatch = useDispatch();
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
     dispatch(startLoading());
-
     const timer = setTimeout(() => {
       dispatch(stopLoading());
-      setReady(true);
+      setReady(true); // تفعيل عرض المحتوى بعد انتهاء التحميل
     }, 2000);
 
     return () => clearTimeout(timer);
-  }, [dispatch]);
+  }, []);
 
   return (
     <main className={styles.container}>
@@ -31,13 +31,8 @@ function Home() {
               <BlogCard
                 key={blog.id}
                 id={blog.id}
-                imgId={blog.imgId}
                 title={blog.title}
                 description={blog.description}
-                titleEn={blog.titleEn}
-                descEn={blog.descEn}
-                titleAr={blog.titleAr}
-                descAr={blog.descAr}
               />
             ))}
           </section>

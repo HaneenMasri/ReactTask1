@@ -6,29 +6,13 @@ function BlogCard({
   id,
   title,
   description,
-  titleEn,
-  descEn,
-  titleAr,
-  descAr,
 }) {
   const location = useLocation();
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
-  const isArabic = i18n.language === "ar";
-
-  const displayTitle =
-    title && title.trim().length > 0
-      ? title
-      : isArabic
-        ? titleAr || titleEn || ""
-        : titleEn || titleAr || "";
-
-  const displayDesc =
-    description && description.trim().length > 0
-      ? description
-      : isArabic
-        ? descAr || descEn || ""
-        : descEn || descAr || "";
+  // بما أن الإدخال أصبح موحداً، نستخدم القيم المباشرة مع وضع قيمة افتراضية في حال كانت فارغة
+  const displayTitle = title || "";
+  const displayDesc = description || "";
 
   return (
     <div className={styles.card}>
@@ -40,7 +24,6 @@ function BlogCard({
         />
 
         <div className={styles.iconBar}>
-
           <Link
             to={`/blog/${id}/edit${location.search}`}
             className={styles.iconBtn}
