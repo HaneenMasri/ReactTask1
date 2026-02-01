@@ -13,7 +13,7 @@
   letter-spacing: 0.4px;
   position: relative;
   width: fit-content;
-  margin-bottom: 0.5rem;
+  margin-bottom: auto;
 }
 
 .pageTitle::after {

@@ -1,43 +1,49 @@
-//src/services/BlogsService.js
+import axios from "axios";
+
 const BLOGS_URL = "http://localhost:3000/blogs";
 
 export async function getBlogsFromServer() {
-  const response = await fetch(`${BLOGS_URL}?_sort=createdAt&_order=desc`);
-  if (!response.ok) throw new Error("Failed to fetch blogs");
-  return await response.json();
-}
-export async function getBlogByIdFromServer(id) {
-  const response = await fetch(`${BLOGS_URL}/${id}`);
-  if (!response.ok) return null;
-  return await response.json();
+  try {
+    const response = await axios.get(`${BLOGS_URL}?_sort=createdAt&_order=desc`);
+    return response.data;
+  } catch {
+    throw new Error("Failed to fetch blogs");
+  }
 }
 
+export async function getBlogByIdFromServer(id) {
+  try {
+    const response = await axios.get(`${BLOGS_URL}/${id}`);
+    return response.data;
+  } catch  {
+    return null;
+  }
+}
 export async function addBlogToServer(blogData) {
-  const response = await fetch(BLOGS_URL, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ 
-      ...blogData, 
-      createdAt: Date.now() 
-    }), 
-  });
-  if (!response.ok) throw new Error("Failed to add blog");
-  return await response.json();
+  try {
+    const response = await axios.post(BLOGS_URL, {
+      ...blogData,
+      createdAt: Date.now(),
+    });
+    return response.data;
+  } catch{
+    throw new Error("Failed to add blog");
+  }
 }
 
 export async function updateBlogInServer(id, blogData) {
-  const response = await fetch(`${BLOGS_URL}/${id}`, {
-    method: "PATCH", 
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(blogData),
-  });
-  if (!response.ok) throw new Error("Failed to update blog");
-  return await response.json();
+  try {
+    const response = await axios.patch(`${BLOGS_URL}/${id}`, blogData);
+    return response.data;
+  } catch{
+    throw new Error("Failed to update blog");
+  }
 }
 
 export async function deleteBlogFromServer(id) {
-  const response = await fetch(`${BLOGS_URL}/${id}`, {
-    method: "DELETE",
-  });
-  if (!response.ok) throw new Error("Failed to delete blog");
+  try {
+    await axios.delete(`${BLOGS_URL}/${id}`);
+  } catch  {
+    throw new Error("Failed to delete blog");
+  }
 }

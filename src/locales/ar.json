@@ -13,6 +13,9 @@
   "next": "التالي",
   "pageOf": "الصفحة {{current}} من {{total}}",
   "reset": "إعادة تعيين المدونات",
+  "cancel": "إلغاء",
+  "arabic": "العربية",
+  "english": "الإنجليزية",
   "validation": {
     "titleRequired": "العنوان مطلوب",
     "titleMax": "الحد الأقصى 50 حرف",

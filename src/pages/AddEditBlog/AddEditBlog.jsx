@@ -34,10 +34,7 @@ function AddEditBlog() {
 
   const { register, handleSubmit, formState: { errors, isValid } } = useForm({
     mode: "onChange",
-    defaultValues: {
-      title: blog?.title || "",
-      description: blog?.description || "",
-    },
+    defaultValues: blog || { title: "", description: "" },
     resolver: yupResolver(schema),
   });
 
@@ -72,18 +69,20 @@ function AddEditBlog() {
             <label htmlFor="title" className={styles.label}>{t("title")}</label>
             <input
               id="title"
-              className={`${styles.input} ${errors.title ? styles.inputError : ""}`}
+              className={`${styles.input} ${errors.title && styles.inputError}`}
               {...register("title")}
             />
             {errors.title && <p className={styles.error}>{errors.title.message}</p>}
           </div>
-
           <div className={styles.field}>
+
+
+            
             <label htmlFor="description" className={styles.label}>{t("description")}</label>
             <textarea
               id="description"
               rows={6}
-              className={`${styles.textarea} ${errors.description ? styles.inputError : ""}`}
+              className={`${styles.textarea} ${errors.description && styles.inputError}`}
               {...register("description")}
             />
             {errors.description && <p className={styles.error}>{errors.description.message}</p>}

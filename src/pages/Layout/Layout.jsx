@@ -5,11 +5,14 @@ import Header from "../../components/Layout/Header";
 import Footer from "../../components/Layout/Footer";
 import styles from "./Layout.module.css";
 import Loader from "../../components/Layout/Loader";
+
 function Layout() {
   const location = useLocation();
   const { t } = useTranslation();
 
-  let pageTitle = t("home");
+  
+let pageTitle = t("home");
+
   if (location.pathname === "/blog/new") pageTitle = t("addBlog");
   else if (location.pathname.includes("/edit")) pageTitle = t("editBlog");
 
@@ -19,7 +22,7 @@ function Layout() {
       <Loader />
 
       <main className={styles.main}>
-        <h1 className={styles.pageTitle}>{pageTitle}</h1>
+        <h2 className={styles.pageTitle}>{pageTitle}</h2>
         <Outlet />
       </main>
 

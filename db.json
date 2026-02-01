@@ -2,14 +2,14 @@
   "blogs": [
     {
       "id": "9",
-      "title": "Edge Computingd",
-      "description": "Processing data closer to the source to reduce latency and improve performancedjjjj",
+      "title": "Edge Computing",
+      "description": "Processing data closer to the source to reduce latency and improve performanced",
       "lang": "en"
     },
     {
       "id": "10",
-      "title": "Machine Learninging",
-      "description": "Teaching computers to learn from data and improve through experience without programming",
+      "title": "Machine LearninginG",
+      "description": "Teaching computers to learn from data and improve through experience without",
       "lang": "en"
     },
     {
@@ -61,13 +61,6 @@
       "lang": "en"
     },
     {
-      "id": "9222",
-      "title": "Blockchain Technologe",
-      "description": "Explore decentralized systems and secure digital transaction",
-      "createdAt": 1769793594746,
-      "lang": "en"
-    },
-    {
       "id": "19",
       "title": "تطوير الويب",
       "description": "بناء مواقع ويب حديثة باستخدام HTML و CSS و JavaScript",
@@ -96,18 +89,18 @@
       "lang": "ar"
     },
     {
-      "id": "23",
-      "title": "تحليل البيانات",
-      "description": "استخلاص معلومات قيّمة من كميات كبيرة من البيانات لدعم اتخاذ القرار",
-      "createdAt": 1769794400000,
+      "id": "25",
+      "title": "تعلم الآلة",
+      "description": "فرع من الذكاء الاصطناعي يهتم بتطوير خوارزميات قادرة على التعلم من البيانات",
+      "createdAt": 1769794200000,
       "lang": "ar"
     },
     {
-      "id": "24",
-      "title": " حنين",
-      "description": "حنين",
-      "lang": "ar",
-      "createdAt": 1769801949233
+      "id": "226",
+      "title": "الروبوتات",
+      "description": "تصميم وبناء أنظمة آلية قادرة على أداء مهام بشرية أو صناعية",
+      "createdAt": 1769794300000,
+      "lang": "ar"
     }
   ]
 }

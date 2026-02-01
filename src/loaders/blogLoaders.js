@@ -1,8 +1,10 @@
+// src/loaders/blogLoaders.js
 import store from "../configs/store-config";
 import { startLoading, stopLoading } from "../store/loaderSlice";
 import { getBlogsFromServer, getBlogByIdFromServer } from "../services/BlogsService";
 import { redirect } from "react-router-dom";
 
+// Loader لصفحة الهوم مع Pagination
 export async function homeLoader({ request }) {
   store.dispatch(startLoading());
   try {
@@ -10,10 +12,9 @@ export async function homeLoader({ request }) {
     const currentPage = Number(url.searchParams.get("page")) || 1;
     const lang = url.searchParams.get("lang") || "en";
 
-    const allBlogs = await getBlogsFromServer();
+    const blogs = await getBlogsFromServer();
 
-    // فلترة حسب اللغة والتأكد من وجود lang
-    const filtered = allBlogs
+    const filtered = blogs
       .filter(blog => blog.lang === lang)
       .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
 
@@ -22,9 +23,9 @@ export async function homeLoader({ request }) {
     const page = Math.min(Math.max(currentPage, 1), totalPages);
     const paginated = filtered.slice((page - 1) * perPage, page * perPage);
 
-    return {
-      blogs: paginated,
-      pagination: { currentPage: page, totalPages },
+    return { 
+      blogs: paginated, 
+      pagination: { currentPage: page, totalPages } 
     };
   } catch (error) {
     console.error("Loader Error:", error);

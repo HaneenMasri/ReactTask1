@@ -13,6 +13,9 @@
   "next": "Next",
   "pageOf": "Page {{current}} of {{total}}",
   "reset": "Reset Blogs",
+  "cancel": "Cancel",
+  "arabic": "Arabic",
+  "english": "English",
   "validation": {
     "titleRequired": "Title is required",
     "titleMax": "Title cannot exceed 50 characters",

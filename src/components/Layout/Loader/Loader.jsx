@@ -1,3 +1,4 @@
+// src/components/Layout/Loader/Loader.jsx
 import { useEffect, useRef, useState } from "react";
 import { useNavigation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
